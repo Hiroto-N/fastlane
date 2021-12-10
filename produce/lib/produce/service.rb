@@ -63,7 +63,7 @@ module Produce
                       :nfc_tag_reading, :passbook, :personal_vpn, :push_notification, :sign_in_with_apple, :siri_kit, :system_extension, :user_management, :vpn_configuration, :wallet,
                       :wireless_accessory, :driver_kit, :driver_kit_endpoint_security, :driver_kit_family_hid_device, :driver_kit_family_networking, :driver_kit_family_serial,
                       :driver_kit_hid_event_service, :driver_kit_transport_hid, :multitasking_camera_access, :sf_universal_link_api, :vp9_decoder, :music_kit, :shazam_kit,
-                      :communication_notifications, :group_activities, :health_kit_estimate_recalibration, :time_sensitive_notifications]
+                      :communication_notifications, :group_activities, :health_kit_estimate_recalibration, :time_sensitive_notifications, :in_app_pass_provisioning]
       options.__hash__.select { |key, value| allowed_keys.include?(key) }
     end
 
@@ -408,6 +408,11 @@ module Produce
       if options.time_sensitive_notifications
         UI.message("\tTime Sensitive Notifications")
         bundle_id.update_capability(USERNOTIFICATIONS_TIMESENSITIVE, enabled: on)
+      end
+
+      if options.in_app_pass_provisioning
+        UI.message("\tIn App Pass Provisioning")
+        bundle_id.update_capability(IN_APP_PASS_PROVISIONING, enabled: on)
       end
 
       updated

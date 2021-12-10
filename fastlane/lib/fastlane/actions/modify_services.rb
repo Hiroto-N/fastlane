@@ -63,6 +63,7 @@ module Fastlane
           hotspot: 'hotspot',
           in_app_purchase: 'in_app_purchase',
           inter_app_audio: 'inter_app_audio',
+          in_app_pass_provisioning: 'in_app_pass_provisioning',
           low_latency_hls: 'low_latency_hls',
           managed_associated_domains: 'managed_associated_domains',
           maps: 'maps',
