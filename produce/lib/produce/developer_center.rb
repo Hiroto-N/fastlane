@@ -78,6 +78,7 @@ module Produce
       group_activities: [SERVICE_ON, SERVICE_OFF],
       health_kit_estimate_recalibration: [SERVICE_ON, SERVICE_OFF],
       time_sensitive_notifications: [SERVICE_ON, SERVICE_OFF],
+      in_app_pass_provisioning: [SERVICE_ON, SERVICE_OFF]
     }
     def run
       login
